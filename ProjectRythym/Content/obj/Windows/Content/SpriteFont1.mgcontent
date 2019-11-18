@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/SpriteFont1.spritefont</SourceFile>
+  <SourceTime>2019-07-19T12:50:38-05:00</SourceTime>
+  <DestFile>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/bin/Windows/Content/SpriteFont1.xnb</DestFile>
+  <DestTime>2019-11-17T13:12:23.0350576-06:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2019-07-19T12:50:46-05:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2019-07-19T12:50:46-05:00</ProcessorTime>
+  <Parameters>
+    <Key>PremultiplyAlpha</Key>
+    <Value>True</Value>
+  </Parameters>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>Compressed</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>
