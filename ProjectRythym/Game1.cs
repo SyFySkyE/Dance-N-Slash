@@ -12,19 +12,10 @@ namespace ProjectRythym
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        PlayerController playerController;
-        GameConsole console;
-
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-
-            playerController = new PlayerController(this);
-            this.Components.Add(playerController);
-
-            console = new GameConsole(this);
-            this.Components.Add(console);
         }
 
         /// <summary>
@@ -69,10 +60,7 @@ namespace ProjectRythym
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-
-            // TODO: Add your update logic here
-            console.GameConsoleWrite(playerController.lastInput);
+                Exit();            
 
             base.Update(gameTime);
         }

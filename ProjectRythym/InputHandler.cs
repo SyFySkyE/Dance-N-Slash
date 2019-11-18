@@ -69,7 +69,7 @@ namespace ProjectRythym
 
         public bool WasKeyPressed(Keys key)
         {
-            return keyboardState.IsKeyDown(key);
+            return keyboardState.IsKeyDown(key) && !prevKeyboardState.IsKeyDown(key);
         }
 
         public bool HasReleasedKey(Keys key)

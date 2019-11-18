@@ -8,7 +8,6 @@ namespace ProjectRythym
     class PlayerController : GameComponent
     {
         InputHandler input;
-        public string lastInput = "";
 
         public PlayerController(Game game) : base(game)
         {
@@ -26,23 +25,27 @@ namespace ProjectRythym
             base.Update(gameTime);
         }
 
-        private void HandleKeyboard()
+        public string HandleKeyboard()
         {
             if (input.KeyboardState.WasKeyPressed(Keys.A) || input.KeyboardState.WasKeyPressed(Keys.Left))
             {
-                lastInput = "Player pushed Left";
+                return "Left";
             }
-            if (input.KeyboardState.WasKeyPressed(Keys.D) || input.KeyboardState.WasKeyPressed(Keys.Right))
+            else if (input.KeyboardState.WasKeyPressed(Keys.D) || input.KeyboardState.WasKeyPressed(Keys.Right))
             {
-                lastInput = "Player pushed Right";
+                return "Right";
             }
-            if (input.KeyboardState.WasKeyPressed(Keys.W) || input.KeyboardState.WasKeyPressed(Keys.Up))
+            else if (input.KeyboardState.WasKeyPressed(Keys.W) || input.KeyboardState.WasKeyPressed(Keys.Up))
             {
-                lastInput = "Player pushed Up";
+                return "Top";
             }
-            if (input.KeyboardState.WasKeyPressed(Keys.S) || input.KeyboardState.WasKeyPressed(Keys.Down))
+            else if (input.KeyboardState.WasKeyPressed(Keys.S) || input.KeyboardState.WasKeyPressed(Keys.Down))
             {
-                lastInput = "Player pushed Down";
+                return "Bottom";
+            }
+            else
+            {
+                return "No Input";
             }
         }
     }
