@@ -4,6 +4,8 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace ProjectRythym
 {
+    public enum PlayerAttackDir { Left, Right, Up, Down, Idle }
+
     class MonoGameSwordsPerson : DrawableSprite
     {
         private PlayerController controller;
@@ -15,7 +17,9 @@ namespace ProjectRythym
         private Texture2D attackDownTexture;        
         private float currentTime = 0f;
         private float timeBeforeIdleReset = 1f;
-        private AttackRectangle[] attackRects = new AttackRectangle[4];
+        public AttackRectangle[] attackRects = new AttackRectangle[4];
+        private PlayerAttackDir attackDir;
+        public PlayerAttackDir AttackDir { get { return this.attackDir; } }
 
         public MonoGameSwordsPerson(Game game) : base(game)
         {            
@@ -35,7 +39,8 @@ namespace ProjectRythym
         }
 
         public override void Initialize()
-        {                     
+        {
+            this.attackDir = PlayerAttackDir.Idle;
             base.Initialize();
         }
 
@@ -99,7 +104,8 @@ namespace ProjectRythym
             this.spriteTexture = attackLeftTexture;
             Point topLeftPoint = new Point(this.locationRect.Left - this.spriteTexture.Width, this.locationRect.Top);
             Point bottomRightPoint = new Point(this.locationRect.Left, this.locationRect.Bottom);
-            Rectangle attackZoneLeft = new Rectangle(topLeftPoint, bottomRightPoint);                        
+            Rectangle attackZoneLeft = new Rectangle(topLeftPoint, bottomRightPoint);
+            this.attackDir = PlayerAttackDir.Left;
         }
 
         private void AttackRight()
@@ -108,6 +114,7 @@ namespace ProjectRythym
             Point topLeftPoint = new Point(this.locationRect.Right, this.locationRect.Top);
             Point bottomRightPoint = new Point(this.locationRect.Right + this.spriteTexture.Width, this.locationRect.Bottom);
             Rectangle attackZoneRight = new Rectangle(topLeftPoint, bottomRightPoint);
+            this.attackDir = PlayerAttackDir.Right;
         }
 
         private void AttackTop()
@@ -116,6 +123,7 @@ namespace ProjectRythym
             Point topLeftPoint = new Point(this.locationRect.Left, this.locationRect.Top - spriteTexture.Height);
             Point bottomRightPoint = new Point(this.locationRect.Right, this.locationRect.Top);
             Rectangle attackZoneTop = new Rectangle(topLeftPoint, bottomRightPoint);
+            this.attackDir = PlayerAttackDir.Up;    
         }
 
         private void AttackDown()
@@ -124,12 +132,14 @@ namespace ProjectRythym
             Point topLeftPoint = new Point(this.locationRect.Left, this.locationRect.Bottom);
             Point bottomRightPoint = new Point(this.locationRect.Right, this.locationRect.Bottom + this.spriteTexture.Height);
             Rectangle attackZoneBottom = new Rectangle(topLeftPoint, bottomRightPoint);
+            this.attackDir = PlayerAttackDir.Down;
         }
         
         private void ResetIdleSprite(float timeInMs)
-        {
+        {            
             if (this.spriteTexture != idleTexture && controller.HandleKeyboard() == "No Input")
-            {                
+            {
+                this.attackDir = PlayerAttackDir.Idle;
                 currentTime += timeInMs / 1000;
                 if (currentTime >= timeBeforeIdleReset)
                 {

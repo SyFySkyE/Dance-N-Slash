@@ -20,7 +20,7 @@ namespace ProjectRythym
             player = new MonoGameSwordsPerson(this);
             this.Components.Add(player);
 
-            skeleManager = new SkeletonManager(this);
+            skeleManager = new SkeletonManager(this, player);
             this.Components.Add(skeleManager);
 
             graphics = new GraphicsDeviceManager(this);
