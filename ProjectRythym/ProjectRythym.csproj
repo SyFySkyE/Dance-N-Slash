@@ -60,6 +60,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\attackZoneRect.png" />
+    <Content Include="Content\playerAttackDown.png" />
+    <Content Include="Content\playerAttackUp.png" />
+    <Content Include="Content\playerAttackLeft.png" />
+    <Content Include="Content\playerAttackRight.png" />
+    <Content Include="Content\playerIdle.png" />
+    <Content Include="Content\SpriteMarker.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -12,8 +12,12 @@ namespace ProjectRythym
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        MonoGameSwordsPerson player;
+
         public Game1()
         {
+            player = new MonoGameSwordsPerson(this);
+            this.Components.Add(player);
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }

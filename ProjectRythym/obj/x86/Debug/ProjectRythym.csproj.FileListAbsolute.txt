@@ -22,3 +22,10 @@ D:\College Shit\School Work\Fall 2019\GPROG I\repos\ProjectRythym\ProjectRythym\
 D:\College Shit\School Work\Fall 2019\GPROG I\repos\ProjectRythym\ProjectRythym\obj\x86\Debug\ProjectRythym.exe
 D:\College Shit\School Work\Fall 2019\GPROG I\repos\ProjectRythym\ProjectRythym\obj\x86\Debug\ProjectRythym.pdb
 D:\College Shit\School Work\Fall 2019\GPROG I\repos\ProjectRythym\ProjectRythym\bin\Windows\x86\Debug\Content\SpriteFont1.xnb
+D:\College Shit\School Work\Fall 2019\GPROG I\repos\ProjectRythym\ProjectRythym\bin\Windows\x86\Debug\Content\playerIdle.xnb
+D:\College Shit\School Work\Fall 2019\GPROG I\repos\ProjectRythym\ProjectRythym\bin\Windows\x86\Debug\Content\SpriteMarker.xnb
+D:\College Shit\School Work\Fall 2019\GPROG I\repos\ProjectRythym\ProjectRythym\bin\Windows\x86\Debug\Content\attackZoneRect.xnb
+D:\College Shit\School Work\Fall 2019\GPROG I\repos\ProjectRythym\ProjectRythym\bin\Windows\x86\Debug\Content\playerAttackDown.xnb
+D:\College Shit\School Work\Fall 2019\GPROG I\repos\ProjectRythym\ProjectRythym\bin\Windows\x86\Debug\Content\playerAttackLeft.xnb
+D:\College Shit\School Work\Fall 2019\GPROG I\repos\ProjectRythym\ProjectRythym\bin\Windows\x86\Debug\Content\playerAttackRight.xnb
+D:\College Shit\School Work\Fall 2019\GPROG I\repos\ProjectRythym\ProjectRythym\bin\Windows\x86\Debug\Content\playerAttackUp.xnb
