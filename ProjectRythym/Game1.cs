@@ -13,11 +13,16 @@ namespace ProjectRythym
         SpriteBatch spriteBatch;
 
         MonoGameSwordsPerson player;
+        SkeletonManager skeleManager;
 
         public Game1()
         {
             player = new MonoGameSwordsPerson(this);
             this.Components.Add(player);
+
+            skeleManager = new SkeletonManager(this);
+            this.Components.Add(skeleManager);
+
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }

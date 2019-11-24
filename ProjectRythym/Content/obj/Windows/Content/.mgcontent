@@ -10,10 +10,14 @@
     <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/playerAttackRight.png</File>
     <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/playerAttackUp.png</File>
     <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/playerIdle.png</File>
+    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/skeletonLeft.png</File>
+    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/skeletonRight.png</File>
     <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/SpriteFont1.spritefont</File>
     <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/SpriteMarker.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

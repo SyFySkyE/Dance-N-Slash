@@ -75,7 +75,7 @@ namespace ProjectRythym
             this.Location = new Vector2(this.vp.Width / 2, this.vp.Height / 2); // Default loc is center of viewport
                 this.Scale = 1;                 //default scale is 1
                 rectangle = new Rectangle();
-            }
+        }
 
             /// <summary>
             /// Allows the game component to perform any initialization it needs to before starting
@@ -98,8 +98,9 @@ namespace ProjectRythym
                 //set default color to white
                 this.DrawColor = Color.White;
 
-                //center orgin
-                //this.Origin = new Vector2(this.spriteTexture.Width / 2, this.spriteTexture.Height / 2);
+            //center orgin
+            //this.Origin = new Vector2(this.spriteTexture.Width / 2, this.spriteTexture.Height / 2);
+            
                 base.LoadContent();
             }
 

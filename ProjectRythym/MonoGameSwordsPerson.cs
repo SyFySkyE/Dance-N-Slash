@@ -2,40 +2,49 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-public enum PlayerState { Idle, AttackLeft, AttackRight, AttackUp, AttackDown }
-
 namespace ProjectRythym
 {
     class MonoGameSwordsPerson : DrawableSprite
     {
         private PlayerController controller;
         private Swordsperson player;
-        protected SwordsPersonState currentState;
-        public SwordsPersonState CurrentState
-        {
-            get { return this.currentState; }
-            set
-            {
-                if (this.currentState != value)
-                {
-                    this.currentState = this.player.CurrentState = value;
-                }
-            }
-        }
-        protected PlayerState playerState = PlayerState.Idle;
         private Texture2D idleTexture;
         private Texture2D attackLeftTexture;
         private Texture2D attackRightTexture;
         private Texture2D attackUpTexture;
-        private Texture2D attackDownTexture;
+        private Texture2D attackDownTexture;        
         private float currentTime = 0f;
         private float timeBeforeIdleReset = 1f;
+        private AttackRectangle[] attackRects = new AttackRectangle[4];
 
         public MonoGameSwordsPerson(Game game) : base(game)
-        {
+        {            
             this.controller = new PlayerController(game);
             player = new Swordsperson();
             this.showMarkers = true;
+            AddDrawingRects();
+        }
+
+        private void AddDrawingRects()
+        {
+            for (int i = 0; i < attackRects.Length; i++)
+            {
+                attackRects[i] = new AttackRectangle(this.Game);
+                this.Game.Components.Add(attackRects[i]);
+            }
+        }
+
+        public override void Initialize()
+        {                     
+            base.Initialize();
+        }
+
+        private void DrawAttackRects()
+        {
+            attackRects[0].Location = new Vector2(this.Location.X - this.spriteTexture.Width * 1.5f, this.Location.Y - spriteTexture.Height / 2);
+            attackRects[1].Location = new Vector2(this.Location.X + this.spriteTexture.Width * 0.5f, this.Location.Y - spriteTexture.Height / 2);
+            attackRects[2].Location = new Vector2(this.Location.X - this.spriteTexture.Width / 2, this.Location.Y - this.spriteTexture.Height * 1.5f);
+            attackRects[3].Location = new Vector2(this.Location.X - this.spriteTexture.Width / 2, this.Location.Y + this.spriteTexture.Height * 0.5f);
         }
 
         protected override void LoadContent()
@@ -44,7 +53,8 @@ namespace ProjectRythym
             LoadTextures();
             this.spriteTexture = idleTexture;
             this.Origin = new Vector2(this.SpriteTexture.Width / 2, this.SpriteTexture.Height / 2);
-            this.Location = new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2);
+            this.Location = new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2);            
+            DrawAttackRects();
         }
 
         private void LoadTextures()
@@ -89,7 +99,7 @@ namespace ProjectRythym
             this.spriteTexture = attackLeftTexture;
             Point topLeftPoint = new Point(this.locationRect.Left - this.spriteTexture.Width, this.locationRect.Top);
             Point bottomRightPoint = new Point(this.locationRect.Left, this.locationRect.Bottom);
-            Rectangle attackZoneLeft = new Rectangle(topLeftPoint, bottomRightPoint);            
+            Rectangle attackZoneLeft = new Rectangle(topLeftPoint, bottomRightPoint);                        
         }
 
         private void AttackRight()

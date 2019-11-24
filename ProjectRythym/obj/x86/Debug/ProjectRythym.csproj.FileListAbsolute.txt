@@ -29,3 +29,5 @@ D:\College Shit\School Work\Fall 2019\GPROG I\repos\ProjectRythym\ProjectRythym\
 D:\College Shit\School Work\Fall 2019\GPROG I\repos\ProjectRythym\ProjectRythym\bin\Windows\x86\Debug\Content\playerAttackLeft.xnb
 D:\College Shit\School Work\Fall 2019\GPROG I\repos\ProjectRythym\ProjectRythym\bin\Windows\x86\Debug\Content\playerAttackRight.xnb
 D:\College Shit\School Work\Fall 2019\GPROG I\repos\ProjectRythym\ProjectRythym\bin\Windows\x86\Debug\Content\playerAttackUp.xnb
+D:\College Shit\School Work\Fall 2019\GPROG I\repos\ProjectRythym\ProjectRythym\bin\Windows\x86\Debug\Content\skeletonLeft.xnb
+D:\College Shit\School Work\Fall 2019\GPROG I\repos\ProjectRythym\ProjectRythym\bin\Windows\x86\Debug\Content\skeletonRight.xnb
