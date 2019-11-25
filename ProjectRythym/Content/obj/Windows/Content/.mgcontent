@@ -5,6 +5,7 @@
   <Config />
   <SourceFiles>
     <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/attackZoneRect.png</File>
+    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/metro.ogg</File>
     <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/playerAttackDown.png</File>
     <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/playerAttackLeft.png</File>
     <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/playerAttackRight.png</File>
@@ -16,6 +17,7 @@
     <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/SpriteMarker.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -25,6 +25,12 @@
 /processorParam:TextureFormat=Color
 /build:attackZoneRect.png
 
+#begin metro.ogg
+/importer:OggImporter
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:metro.ogg
+
 #begin playerAttackDown.png
 /importer:TextureImporter
 /processor:TextureProcessor

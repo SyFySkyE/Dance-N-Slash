@@ -21,7 +21,7 @@ namespace ProjectRythym
                 }
             }
         }
-        private float speed = 250;
+        private float speed = 385;
 
         public MonogameSkeleton(Game game) : base(game)
         {

@@ -45,7 +45,6 @@
     <Compile Include="DrawableSprite.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameConsole.cs" />
-    <Compile Include="GameLogic.cs" />
     <Compile Include="InputHandler.cs" />
     <Compile Include="MonogameSkeleton.cs" />
     <Compile Include="MonoGameSwordsPerson.cs" />
@@ -55,6 +54,7 @@
     <Compile Include="ScoreManager.cs" />
     <Compile Include="Skeleton.cs" />
     <Compile Include="SkeletonManager.cs" />
+    <Compile Include="SongManager.cs" />
     <Compile Include="Sprite.cs" />
     <Compile Include="Swordsperson.cs" />
   </ItemGroup>
@@ -76,6 +76,7 @@
     <Content Include="Content\skeletonRight.png" />
     <Content Include="Content\SpriteMarker.png" />
     <Content Include="Icon.ico" />
+    <Content Include="metro.ogg" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />

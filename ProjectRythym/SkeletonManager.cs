@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 
 namespace ProjectRythym
 {
@@ -9,12 +10,16 @@ namespace ProjectRythym
     {
         private List<MonogameSkeleton> skeletons;
         private List<MonogameSkeleton> deadSkeletons;
+        private SongManager songManager;
         private MonoGameSwordsPerson player;
+        private float currentTime = 0;
 
         public SkeletonManager(Game game, MonoGameSwordsPerson player) : base(game)
         {
             this.player = player;
             skeletons = new List<MonogameSkeleton>();
+            songManager = new SongManager(game);
+           
         }
 
         public void AddSkeleton(string direction)
@@ -60,6 +65,12 @@ namespace ProjectRythym
         {
             deadSkeletons = new List<MonogameSkeleton>();
             base.Initialize();
+            StartSong();            
+        }
+
+        private void StartSong()
+        {
+            songManager.Initialize();
         }
 
         protected override void LoadContent()
@@ -69,9 +80,11 @@ namespace ProjectRythym
         }
 
         public override void Update(GameTime gameTime)
-        {            
+        {
+            SpawnAtBeat(gameTime);            
             for (int i = 0; i < skeletons.Count; i++)
             {
+                
                 skeletons[i].Update(gameTime);
                 if (PlayerAttack(skeletons[i]))
                 {
@@ -79,6 +92,18 @@ namespace ProjectRythym
                 }                
             }
             base.Update(gameTime);
+        }
+
+        private void SpawnAtBeat(GameTime gameTime)
+        {
+            currentTime += (int)gameTime.ElapsedGameTime.TotalMilliseconds;
+           
+                if (songManager.Bpm / (currentTime / 1000) <= songManager.Bpm)
+                {
+                    AddSkeleton("Left");
+                    currentTime = 0;
+                }
+                        
         }
 
         private bool PlayerAttack(MonogameSkeleton skele)

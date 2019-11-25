@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -15,6 +16,8 @@ namespace ProjectRythym
         MonoGameSwordsPerson player;
         SkeletonManager skeleManager;
 
+        private double framesPerSecond = 60;
+
         public Game1()
         {
             player = new MonoGameSwordsPerson(this);
@@ -23,7 +26,12 @@ namespace ProjectRythym
             skeleManager = new SkeletonManager(this, player);
             this.Components.Add(skeleManager);
 
+            IsFixedTimeStep = true;
+            this.TargetElapsedTime = TimeSpan.FromSeconds(1d / framesPerSecond); // TODO Gets out of sync w/out this
+
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferHeight = 800;
+            graphics.PreferredBackBufferWidth = 800;
             Content.RootDirectory = "Content";
         }
 
