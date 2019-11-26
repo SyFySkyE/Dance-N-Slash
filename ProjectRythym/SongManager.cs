@@ -14,16 +14,13 @@ namespace ProjectRythym
         public int Bpm { get { return this.bpm; } }
 
         public SongManager( Game game) : base(game)
-        {
-            
+        {            
             MediaPlayer.MediaStateChanged += MediaPlayer_MediaStateChanged;
-
         }
 
         public override void Initialize()
         {
-            song = Game.Content.Load<Song>("metro");
-            MediaPlayer.Play(song);
+            song = Game.Content.Load<Song>("metro");            
             MediaPlayer.IsRepeating = true;
             base.Initialize();
         }
@@ -31,6 +28,16 @@ namespace ProjectRythym
         private void MediaPlayer_MediaStateChanged(object sender, EventArgs e)
         {
             MediaPlayer.Volume = 1f;            
-        }        
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+        }
+
+        public void PlaySong()
+        {
+            MediaPlayer.Play(song);
+        }
     }    
 }

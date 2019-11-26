@@ -8,7 +8,7 @@ namespace ProjectRythym
 
     class MonoGameSwordsPerson : DrawableSprite
     {
-        private PlayerController controller;
+        public PlayerController controller;
         private Swordsperson player;
         private Texture2D idleTexture;
         private Texture2D attackLeftTexture;

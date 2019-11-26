@@ -21,7 +21,16 @@ namespace ProjectRythym
                 }
             }
         }
-        private float speed = 385;
+        private float speed = 250;
+        public float NewSpeed { get { return this.speed; } 
+            set
+            {
+                if (this.speed != value)
+                {
+                    this.speed = value;
+                }
+            } 
+        }
 
         public MonogameSkeleton(Game game) : base(game)
         {

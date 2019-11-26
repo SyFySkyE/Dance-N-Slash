@@ -13,13 +13,13 @@ namespace ProjectRythym
         private SongManager songManager;
         private MonoGameSwordsPerson player;
         private float currentTime = 0;
+        private bool isPlaying = false;
 
         public SkeletonManager(Game game, MonoGameSwordsPerson player) : base(game)
         {
             this.player = player;
             skeletons = new List<MonogameSkeleton>();
-            songManager = new SongManager(game);
-           
+            songManager = new SongManager(game);           
         }
 
         public void AddSkeleton(string direction)
@@ -81,16 +81,20 @@ namespace ProjectRythym
 
         public override void Update(GameTime gameTime)
         {
-            SpawnAtBeat(gameTime);            
-            for (int i = 0; i < skeletons.Count; i++)
+            if (isPlaying)
             {
-                
-                skeletons[i].Update(gameTime);
-                if (PlayerAttack(skeletons[i]))
+                SpawnAtBeat(gameTime);
+                for (int i = 0; i < skeletons.Count; i++)
                 {
-                    skeletons.Remove(skeletons[i]);
-                }                
+
+                    skeletons[i].Update(gameTime);
+                    if (PlayerAttack(skeletons[i]))
+                    {
+                        skeletons.Remove(skeletons[i]);
+                    }
+                }
             }
+            
             base.Update(gameTime);
         }
 
@@ -100,8 +104,10 @@ namespace ProjectRythym
            
                 if (songManager.Bpm / (currentTime / 1000) <= songManager.Bpm)
                 {
+                float newnum = songManager.Bpm - currentTime / 1000; // if this doesn't work then
+                                //newnum = songManager.Bpm - songManager.Bpm / (currentTime / 1000)
                     AddSkeleton("Left");
-                    currentTime = 0;
+                    currentTime = newnum;
                 }
                         
         }
@@ -135,6 +141,11 @@ namespace ProjectRythym
                 skele.Draw(gameTime);
             }
             base.Draw(gameTime);
+        }
+
+        public void StartSpawning()
+        {
+            isPlaying = true;
         }
     }
 }

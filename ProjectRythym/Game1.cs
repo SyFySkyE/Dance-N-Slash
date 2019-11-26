@@ -15,6 +15,8 @@ namespace ProjectRythym
 
         MonoGameSwordsPerson player;
         SkeletonManager skeleManager;
+        private SongManager songManager;
+        private PlayerController input;
 
         private double framesPerSecond = 60;
 
@@ -25,6 +27,12 @@ namespace ProjectRythym
 
             skeleManager = new SkeletonManager(this, player);
             this.Components.Add(skeleManager);
+
+            songManager = new SongManager(this);
+            this.Components.Add(songManager);
+
+            input = new PlayerController(this);
+            this.Components.Add(input);
 
             IsFixedTimeStep = true;
             this.TargetElapsedTime = TimeSpan.FromSeconds(1d / framesPerSecond); // TODO Gets out of sync w/out this
@@ -77,7 +85,13 @@ namespace ProjectRythym
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();            
+                Exit();
+
+            if (input.HandleKeyboard() == "start") 
+            {
+                skeleManager.StartSpawning();
+                songManager.PlaySong();
+            }
 
             base.Update(gameTime);
         }

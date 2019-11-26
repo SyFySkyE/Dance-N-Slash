@@ -43,6 +43,10 @@ namespace ProjectRythym
             {
                 return "Bottom";
             }
+            else if (input.KeyboardState.WasKeyPressed(Keys.I))
+            {
+                return "start";
+            }
             else
             {
                 return "No Input";
