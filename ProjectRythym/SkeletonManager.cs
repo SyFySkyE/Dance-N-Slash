@@ -102,7 +102,7 @@ namespace ProjectRythym
         {
             currentTime += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
            
-                if (songManager.Bpm * (currentTime / 1000) >= songManager.Bpm)
+                if ((currentTime / 1000) >= (songManager.Bpm / 60))
                 {
                 //float newnum = songManager.Bpm - songManager.Bpm / (currentTime / 1000); // if this doesn't work then
                                 //newnum = songManager.Bpm - songManager.Bpm / (currentTime / 1000)

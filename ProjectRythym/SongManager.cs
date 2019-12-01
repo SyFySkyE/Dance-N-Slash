@@ -12,6 +12,7 @@ namespace ProjectRythym
         private Song song;
         private int bpm = 60;
         public int Bpm { get { return this.bpm; } }
+        private float previousFrameTime;
 
         public SongManager( Game game) : base(game)
         {            
@@ -27,11 +28,12 @@ namespace ProjectRythym
 
         private void MediaPlayer_MediaStateChanged(object sender, EventArgs e)
         {
-            MediaPlayer.Volume = 1f;            
+            MediaPlayer.Volume = 0.5f;            
         }
 
         public override void Update(GameTime gameTime)
         {
+            
             base.Update(gameTime);
         }
 
