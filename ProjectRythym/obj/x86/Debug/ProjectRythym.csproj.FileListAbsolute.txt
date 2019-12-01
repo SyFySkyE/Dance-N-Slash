@@ -103,3 +103,5 @@ D:\College Shit\School Work\Fall 2019\GPROG I\repos\Dance-N-Slash\ProjectRythym\
 D:\College Shit\School Work\Fall 2019\GPROG I\repos\Dance-N-Slash\ProjectRythym\obj\x86\Debug\ProjectRythym.csproj.CopyComplete
 D:\College Shit\School Work\Fall 2019\GPROG I\repos\Dance-N-Slash\ProjectRythym\obj\x86\Debug\ProjectRythym.exe
 D:\College Shit\School Work\Fall 2019\GPROG I\repos\Dance-N-Slash\ProjectRythym\obj\x86\Debug\ProjectRythym.pdb
+D:\College Shit\School Work\Fall 2019\GPROG I\repos\Dance-N-Slash\ProjectRythym\bin\Windows\x86\Debug\Content\Crystal Tokyo by FantoMenk and Meganeko.wma
+D:\College Shit\School Work\Fall 2019\GPROG I\repos\Dance-N-Slash\ProjectRythym\bin\Windows\x86\Debug\Content\Crystal Tokyo by FantoMenk and Meganeko.xnb

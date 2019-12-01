@@ -2,7 +2,7 @@
 
 namespace ProjectRythym
 {
-    public enum SkeletonEnum { Alive, Dead, Up, Right, Left, Down }
+    public enum SkeletonEnum { Up, Right, Left, Down }
 
     class Skeleton
     {
@@ -19,7 +19,7 @@ namespace ProjectRythym
 
         public Skeleton()
         {
-            currentState = SkeletonEnum.Alive;
+
         }
     }
 }

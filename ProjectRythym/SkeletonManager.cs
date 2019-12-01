@@ -14,12 +14,15 @@ namespace ProjectRythym
         private MonoGameSwordsPerson player;
         private float currentTime = 0;
         private bool isPlaying = false;
+        private int numberOfSkeletonDirections;
+        private float speedBpmCalulation = 6.83333333f; // Multiplying this number with song's bpm determines speed of enemies
 
         public SkeletonManager(Game game, MonoGameSwordsPerson player) : base(game)
         {
             this.player = player;
             skeletons = new List<MonogameSkeleton>();
-            songManager = new SongManager(game);           
+            songManager = new SongManager(game);       
+            
         }
 
         public void AddSkeleton(string direction)
@@ -31,6 +34,7 @@ namespace ProjectRythym
         {
             MonogameSkeleton skeleton = new MonogameSkeleton(this.Game);
             skeleton.Initialize();
+            skeleton.Speed = speedBpmCalulation * songManager.Bpm;
             if (direction == "Top")
             {
                 skeleton.CurrentState = SkeletonEnum.Up;
@@ -64,8 +68,14 @@ namespace ProjectRythym
         public override void Initialize()
         {
             deadSkeletons = new List<MonogameSkeleton>();
+            GetNumberOfSkeleDirections();
             base.Initialize();
             StartSong();            
+        }
+
+        private void GetNumberOfSkeleDirections()
+        {
+            numberOfSkeletonDirections = Enum.GetNames(typeof(SkeletonEnum)).Length;
         }
 
         private void StartSong()
@@ -105,11 +115,33 @@ namespace ProjectRythym
                 if ((currentTime / 1000) >= (songManager.Bpm / 60))
                 {
                 //float newnum = songManager.Bpm - songManager.Bpm / (currentTime / 1000); // if this doesn't work then
-                                //newnum = songManager.Bpm - songManager.Bpm / (currentTime / 1000)
-                    AddSkeleton("Left");
+                //newnum = songManager.Bpm - songManager.Bpm / (currentTime / 1000)
+                    SpawnRandomSkeleton();
                     currentTime = 0;
-                }
-                        
+                }                        
+        }
+
+        private void SpawnRandomSkeleton()
+        {
+            Random r = new Random();
+            int randomSkele = r.Next(0, numberOfSkeletonDirections);
+            switch (randomSkele)
+            {
+                case 0:
+                    AddSkeleton("Left");
+                    break;
+                case 1:
+                    AddSkeleton("Top");
+                    break;
+                case 2:
+                    AddSkeleton("Right");
+                    break;
+                case 3:
+                    AddSkeleton("Bottom");
+                    break;
+                default:                    
+                    break;
+            }
         }
 
         private bool PlayerAttack(MonogameSkeleton skele)

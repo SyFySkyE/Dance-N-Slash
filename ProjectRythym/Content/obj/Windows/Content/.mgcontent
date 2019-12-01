@@ -5,6 +5,7 @@
   <Config />
   <SourceFiles>
     <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/attackZoneRect.png</File>
+    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/Crystal Tokyo by FantoMenk and Meganeko.ogg</File>
     <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/metro.ogg</File>
     <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/playerAttackDown.png</File>
     <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/playerAttackLeft.png</File>
@@ -17,6 +18,7 @@
     <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/SpriteMarker.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

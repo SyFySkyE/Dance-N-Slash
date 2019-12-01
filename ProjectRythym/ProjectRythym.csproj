@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\attackZoneRect.png" />
+    <Content Include="Content\Crystal Tokyo by FantoMenk and Meganeko.ogg" />
     <Content Include="Content\playerAttackDown.png" />
     <Content Include="Content\playerAttackUp.png" />
     <Content Include="Content\playerAttackLeft.png" />

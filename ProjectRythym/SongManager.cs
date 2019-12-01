@@ -13,6 +13,16 @@ namespace ProjectRythym
         private int bpm = 60;
         public int Bpm { get { return this.bpm; } }
         private float previousFrameTime;
+        private bool isPlaying;
+        public bool IsPlaying { get { return this.isPlaying; }
+            set
+            {
+                if (this.isPlaying != value)
+                {
+                    this.isPlaying = value;
+                }
+            }
+        }
 
         public SongManager( Game game) : base(game)
         {            
@@ -21,7 +31,8 @@ namespace ProjectRythym
 
         public override void Initialize()
         {
-            song = Game.Content.Load<Song>("metro");            
+            song = Game.Content.Load<Song>("metro");
+            isPlaying = false;
             MediaPlayer.IsRepeating = true;
             base.Initialize();
         }
@@ -47,6 +58,17 @@ namespace ProjectRythym
         public void ResumeSong()
         {
             MediaPlayer.Resume();
+            isPlaying = true;
+        }
+
+        public string GetSongInfo()
+        {
+            return $"{song.Name} by {song.Artist}"; ;
+        }
+
+        public string GetPlayPosition()
+        {
+            return $"{MediaPlayer.PlayPosition} / {song.Duration}";
         }
     }    
 }

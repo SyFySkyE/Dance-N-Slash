@@ -4,19 +4,21 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/attackZoneRect.png</File>
-    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/metro.ogg</File>
-    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/playerAttackDown.png</File>
-    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/playerAttackLeft.png</File>
-    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/playerAttackRight.png</File>
-    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/playerAttackUp.png</File>
-    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/playerIdle.png</File>
-    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/skeletonLeft.png</File>
-    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/skeletonRight.png</File>
-    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/SpriteFont1.spritefont</File>
-    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/ProjectRythym/ProjectRythym/Content/SpriteMarker.png</File>
+    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/attackZoneRect.png</File>
+    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/Crystal Tokyo by FantoMenk and Meganeko.ogg</File>
+    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/metro.ogg</File>
+    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/playerAttackDown.png</File>
+    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/playerAttackLeft.png</File>
+    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/playerAttackRight.png</File>
+    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/playerAttackUp.png</File>
+    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/playerIdle.png</File>
+    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/skeletonLeft.png</File>
+    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/skeletonRight.png</File>
+    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/SpriteFont1.spritefont</File>
+    <File>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/SpriteMarker.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
