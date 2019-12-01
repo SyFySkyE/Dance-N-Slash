@@ -47,6 +47,10 @@ namespace ProjectRythym
             {
                 return "start";
             }
+            else if (input.KeyboardState.WasKeyPressed(Keys.R))
+            {
+                return "resume";
+            }
             else
             {
                 return "No Input";

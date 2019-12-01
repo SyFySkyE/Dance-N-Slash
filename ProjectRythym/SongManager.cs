@@ -38,9 +38,15 @@ namespace ProjectRythym
             base.Update(gameTime);
         }
 
-        public void PlaySong()
+        public void QueueSong()
         {
             MediaPlayer.Play(song);
+            MediaPlayer.Pause();
+        }
+
+        public void ResumeSong()
+        {
+            MediaPlayer.Resume();
         }
     }    
 }

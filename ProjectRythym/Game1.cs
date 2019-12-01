@@ -90,9 +90,13 @@ namespace ProjectRythym
                 Exit();
 
             if (input.HandleKeyboard() == "start") 
+            {                
+                songManager.QueueSong();
+            }
+            else if (input.HandleKeyboard() == "resume")
             {
                 skeleManager.StartSpawning();
-                songManager.PlaySong();
+                songManager.ResumeSong();
             }
 
             base.Update(gameTime);
