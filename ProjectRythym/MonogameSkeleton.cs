@@ -21,7 +21,7 @@ namespace ProjectRythym
                 }
             }
         }
-        private float speed = 270;
+        private float speed = 325;
         public float NewSpeed { get { return this.speed; } 
             set
             {
