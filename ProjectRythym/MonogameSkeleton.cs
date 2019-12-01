@@ -21,7 +21,7 @@ namespace ProjectRythym
                 }
             }
         }
-        private float speed = 350;
+        private float speed = 270;
         public float NewSpeed { get { return this.speed; } 
             set
             {
@@ -62,7 +62,8 @@ namespace ProjectRythym
 
         public override void Update(GameTime gameTime)
         {
-            this.Location += (this.Direction * (lastUpdateTime / 1000) * speed);
+            float currentTime = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            this.Location += (this.Direction * speed * (currentTime / 1000));
             base.Update(gameTime);
         }
     }

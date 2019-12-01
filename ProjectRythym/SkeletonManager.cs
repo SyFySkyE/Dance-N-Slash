@@ -100,14 +100,14 @@ namespace ProjectRythym
 
         private void SpawnAtBeat(GameTime gameTime)
         {
-            currentTime += (int)gameTime.ElapsedGameTime.TotalMilliseconds;
+            currentTime += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
            
-                if (songManager.Bpm / (currentTime / 1000) <= songManager.Bpm)
+                if (songManager.Bpm * (currentTime / 1000) >= songManager.Bpm)
                 {
-                float newnum = songManager.Bpm - songManager.Bpm / (currentTime / 1000); // if this doesn't work then
+                //float newnum = songManager.Bpm - songManager.Bpm / (currentTime / 1000); // if this doesn't work then
                                 //newnum = songManager.Bpm - songManager.Bpm / (currentTime / 1000)
                     AddSkeleton("Left");
-                    currentTime = newnum;
+                    currentTime = 0;
                 }
                         
         }
