@@ -21,7 +21,7 @@ namespace ProjectRythym
         private double framesPerSecond = 60;
 
         public Game1()
-        {
+        {            
             player = new MonoGameSwordsPerson(this);
             this.Components.Add(player);
 
@@ -36,6 +36,8 @@ namespace ProjectRythym
 
             IsFixedTimeStep = true;
             this.TargetElapsedTime = TimeSpan.FromSeconds(1d / framesPerSecond); // TODO Gets out of sync w/out this
+
+            this.Window.Title = TargetElapsedTime.ToString();
 
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferHeight = 800;

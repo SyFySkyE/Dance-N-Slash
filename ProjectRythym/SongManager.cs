@@ -33,6 +33,8 @@ namespace ProjectRythym
 
         public override void Update(GameTime gameTime)
         {
+            previousFrameTime = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            
             base.Update(gameTime);
         }
 
