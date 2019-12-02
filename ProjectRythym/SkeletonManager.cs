@@ -15,14 +15,14 @@ namespace ProjectRythym
         private float currentTime = 0;
         private bool isPlaying = false;
         private int numberOfSkeletonDirections;
-        private float speedBpmCalulation = 6.83333333f; // Multiplying this number with song's bpm determines speed of enemies
+        private float speedBpmCalulation = 350f; // Multiplying this number with song's bps determines speed of enemies
+        public int difficulty = 2; // The higher, the easier
 
         public SkeletonManager(Game game, MonoGameSwordsPerson player) : base(game)
         {
             this.player = player;
             skeletons = new List<MonogameSkeleton>();
-            songManager = new SongManager(game);       
-            
+            songManager = new SongManager(game);
         }
 
         public void AddSkeleton(string direction)
@@ -34,7 +34,8 @@ namespace ProjectRythym
         {
             MonogameSkeleton skeleton = new MonogameSkeleton(this.Game);
             skeleton.Initialize();
-            skeleton.Speed = speedBpmCalulation * songManager.Bpm;
+            skeleton.NewSpeed = (speedBpmCalulation * songManager.Bps) / difficulty;
+            
             if (direction == "Top")
             {
                 skeleton.CurrentState = SkeletonEnum.Up;
@@ -51,7 +52,7 @@ namespace ProjectRythym
             {
                 skeleton.CurrentState = SkeletonEnum.Left;
                 skeleton.Direction = new Vector2(1, 0);
-                skeleton.Location = new Vector2(0 - skeleton.spriteTexture.Width - skeleton.spriteTexture.Height, GraphicsDevice.Viewport.Height / 2 - skeleton.spriteTexture.Height / 2);
+                skeleton.Location = new Vector2(0 - skeleton.spriteTexture.Width, GraphicsDevice.Viewport.Height / 2 - skeleton.spriteTexture.Height / 2);
             }
             else if (direction == "Right")
             {
@@ -67,7 +68,7 @@ namespace ProjectRythym
 
         public override void Initialize()
         {
-            deadSkeletons = new List<MonogameSkeleton>();
+            deadSkeletons = new List<MonogameSkeleton>();            
             GetNumberOfSkeleDirections();
             base.Initialize();
             StartSong();            
@@ -84,41 +85,48 @@ namespace ProjectRythym
         }
 
         protected override void LoadContent()
-        {
-            AddSkeleton("Left");            
+        {            
             base.LoadContent();
         }
 
         public override void Update(GameTime gameTime)
-        {
+        {            
             if (isPlaying)
             {
                 SpawnAtBeat(gameTime);
                 for (int i = 0; i < skeletons.Count; i++)
                 {
-
                     skeletons[i].Update(gameTime);
                     if (PlayerAttack(skeletons[i]))
                     {
+                        ScoreManager.Score++;
+                        skeletons[i].IsDead = true;
+                        skeletons.Remove(skeletons[i]);
+                    }
+                    else if (SkeleAttack(skeletons[i]))
+                    {
+                        ScoreManager.Lives--;
+                        player.IsHurt = true;
                         skeletons.Remove(skeletons[i]);
                     }
                 }
-            }
-            
+            }            
             base.Update(gameTime);
         }
 
         private void SpawnAtBeat(GameTime gameTime)
         {
-            float lastUpdateTime = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            currentTime += lastUpdateTime;
-                if ((currentTime / 1000) >= (songManager.Bpm / 60))
-                {
-                //float newnum = songManager.Bpm - songManager.Bpm / (currentTime / 1000); // if this doesn't work then
-                //newnum = songManager.Bpm - songManager.Bpm / (currentTime / 1000)
-                    SpawnRandomSkeleton();
-                    currentTime = 0;
-                }                        
+            float lastupdatetime = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            currentTime += lastupdatetime;
+            if ((currentTime) >= (60000 / songManager.Bpm))
+            {
+                //float newnum = (currenttime) - (60000 / songmanager.bpm);
+                //float newnum = songmanager.bpm - songmanager.bpm / (currenttime / 1000); // if this doesn't work then
+                //newnum = songmanager.bpm - songmanager.bpm / (currenttime / 1000)
+                SpawnRandomSkeleton();
+                float newnum = (currentTime - (60000 / songManager.Bpm));
+                currentTime = newnum;
+            }
         }
 
         private void SpawnRandomSkeleton()
@@ -155,11 +163,16 @@ namespace ProjectRythym
                         return true;
                     }
                 }
-            }
+            }            
+            return false;
+        }
+
+        private bool SkeleAttack(MonogameSkeleton skele)
+        {
             if (skele.Intersects(player))
             {
                 if (skele.PerPixelCollision(player))
-                {
+                {                    
                     return true;
                 }
             }

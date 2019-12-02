@@ -72,7 +72,10 @@
     <Content Include="Content\playerAttackUp.png" />
     <Content Include="Content\playerAttackLeft.png" />
     <Content Include="Content\playerAttackRight.png" />
+    <Content Include="Content\playerHurt.png" />
     <Content Include="Content\playerIdle.png" />
+    <Content Include="Content\skeletonDeadLeft.png" />
+    <Content Include="Content\skeletonDeadRight.png" />
     <Content Include="Content\skeletonLeft.png" />
     <Content Include="Content\skeletonRight.png" />
     <Content Include="Content\SpriteMarker.png" />

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/playerAttackRight.png</SourceFile>
+  <SourceFile>D:/College Shit/School Work/Fall 2019/GPROG I/repos/DanceN-Slash/ProjectRythym/Content/playerAttackRight.png</SourceFile>
   <SourceTime>2019-11-30T21:28:14.6905116-06:00</SourceTime>
-  <DestFile>D:/College Shit/School Work/Fall 2019/GPROG I/repos/Dance-N-Slash/ProjectRythym/Content/bin/Windows/playerAttackRight.xnb</DestFile>
-  <DestTime>2019-12-01T11:34:33.1521395-06:00</DestTime>
+  <DestFile>D:/College Shit/School Work/Fall 2019/GPROG I/repos/DanceN-Slash/ProjectRythym/Content/bin/Windows/playerAttackRight.xnb</DestFile>
+  <DestTime>2019-12-01T17:28:36.5866439-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2019-07-19T12:50:46-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -10,8 +10,11 @@ namespace ProjectRythym
     class SongManager : GameComponent
     {
         private Song song;
-        private int bpm = 60;
+        private int bpm = 174;
         public int Bpm { get { return this.bpm; } }
+        private float bps = 2.9f;
+        public float Bps { get { return this.bps; } }
+        private float bpms = 0;
         private float previousFrameTime;
         private bool isPlaying;
         public bool IsPlaying { get { return this.isPlaying; }
@@ -23,6 +26,10 @@ namespace ProjectRythym
                 }
             }
         }
+        private float currentTime = 0;
+        private float totalTime = 0;
+
+        public static event Action OnBeat;
 
         public SongManager( Game game) : base(game)
         {            
@@ -31,9 +38,11 @@ namespace ProjectRythym
 
         public override void Initialize()
         {
-            song = Game.Content.Load<Song>("metro");
+            song = Game.Content.Load<Song>("Crystal Tokyo by FantoMenk and Meganeko");
+            ScoreManager.SongName = song.Name;
+            bps = (bpm / 60);
+            bpms = 60000 / bpm; // Every beat per bpms            
             isPlaying = false;
-            MediaPlayer.IsRepeating = true;
             base.Initialize();
         }
 
@@ -45,7 +54,7 @@ namespace ProjectRythym
         public override void Update(GameTime gameTime)
         {
             previousFrameTime = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            
+            ScoreManager.SongLength = $"{MediaPlayer.PlayPosition} / {song.Duration}";
             base.Update(gameTime);
         }
 

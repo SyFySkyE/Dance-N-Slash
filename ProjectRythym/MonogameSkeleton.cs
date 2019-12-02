@@ -10,6 +10,8 @@ namespace ProjectRythym
         private Texture2D currentTexture;
         private Texture2D rightSprite;
         private Texture2D leftSprite;
+        private Texture2D leftHurtSprite;
+        private Texture2D rightHurtSprite;
         public SkeletonEnum CurrentState
         {
             get { return this.skeleton.CurrentState; }
@@ -21,7 +23,13 @@ namespace ProjectRythym
                 }
             }
         }
-        private float speed = 410;
+        private bool isDead = false;
+        public bool IsDead { set
+            {
+                isDead = value;
+            }
+        }
+        private float speed = 0; // 410 Pixels to get into attackRect
         public float NewSpeed { get { return this.speed; } 
             set
             {
@@ -56,14 +64,20 @@ namespace ProjectRythym
         {
             rightSprite = this.Game.Content.Load<Texture2D>("skeletonRight");
             leftSprite = this.Game.Content.Load<Texture2D>("skeletonLeft");
+            rightHurtSprite = this.Game.Content.Load<Texture2D>("skeletonDeadRight");
+            leftHurtSprite = this.Game.Content.Load<Texture2D>("skeletonDeadLeft");
             this.Speed = speed;
             base.LoadContent();
         }
 
         public override void Update(GameTime gameTime)
         {
-            float currentTime = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            this.Location += (this.Direction * speed * (currentTime / 1000));
+            float timeInMs = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            this.Location += (this.Direction * speed * (timeInMs / 1000));
+            if (isDead)
+            {
+                this.SpriteTexture = leftHurtSprite;
+            }
             base.Update(gameTime);
         }
     }

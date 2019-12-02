@@ -14,7 +14,15 @@ namespace ProjectRythym
         private Texture2D attackLeftTexture;
         private Texture2D attackRightTexture;
         private Texture2D attackUpTexture;
-        private Texture2D attackDownTexture;        
+        private Texture2D attackDownTexture;
+        private Texture2D hurtTexture;
+        private bool isHurt = false;
+        public bool IsHurt { get { return this.isHurt; }
+            set
+            {
+                this.isHurt = value;
+            }
+        }
         private float currentTime = 0f;
         private float timeBeforeIdleReset = 1f;
         public AttackRectangle[] attackRects = new AttackRectangle[4];
@@ -69,12 +77,17 @@ namespace ProjectRythym
             attackRightTexture = this.Game.Content.Load<Texture2D>("playerAttackRight");
             attackUpTexture = this.Game.Content.Load<Texture2D>("playerAttackUp");
             attackDownTexture = this.Game.Content.Load<Texture2D>("playerAttackDown");
+            hurtTexture = this.Game.Content.Load<Texture2D>("playerHurt");
         }
 
         public override void Update(GameTime gameTime)
         {
             float time = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             this.controller.Update(gameTime);
+            if (isHurt)
+            {
+                this.SpriteTexture = hurtTexture;
+            }
             HandleControllerInput(time);
             base.Update(gameTime);
         }
@@ -150,6 +163,7 @@ namespace ProjectRythym
             else if (controller.HandleKeyboard() != "No Input")
             {
                 currentTime = 0f;
+                IsHurt = false;
             }
         }
     }
